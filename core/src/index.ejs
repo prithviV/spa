@@ -36,7 +36,8 @@
       "imports": {
         "single-spa": "https://cdn.jsdelivr.net/npm/single-spa@5.8.2/lib/system/single-spa.min.js",
         "@beautiful/navigation": "//localhost:9001/beautiful-navigation.js",
-        "@beautiful/styles": "//localhost:9002/beautiful-styles.js"
+        "@beautiful/styles": "//localhost:9002/beautiful-styles.js",
+        "@beautiful/home": "//localhost:8081/js/app.js"
       }
     }
   </script>
@@ -78,6 +79,9 @@
         <application name="@<%- orgName %>/navigation"></application>
       </nav>
       <main>
+        <route path="/">
+          <application name="@beautiful/home"></application>
+        </route>
         <route path="about">
           <application name="@single-spa/welcome"></application>
         </route>
