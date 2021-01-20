@@ -1,0 +1,10 @@
+.navigation {
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.navigation li{
+    list-style: none;
+    float: left;
+    padding: 10px;
+}
