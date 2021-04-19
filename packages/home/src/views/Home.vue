@@ -5,6 +5,7 @@
       <p>Simply put, Micro Frontend Application is a piece of code for a portion of a webpage that can be maintained and deployed indepedently.
         Micro Frontend Architecture is bringing several such Micro Frondend Applictions together to form a complete webpage.
       </p>
+      <img src="../assets/mfa.gif" alt="Micro Frontend Architecture"/>
       <h2 class="display-6 my-4">Pros</h2>
       <div class="row">
         <div class="col-sm-4">
