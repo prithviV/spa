@@ -1,12 +1,25 @@
 import React from "react";
-import { links } from "./root.helper.js";
 import { Link } from "@reach/router";
+const links = [
+  {
+    name: "Home",
+    href: "/",
+  },
+  {
+    name: "Featured",
+    href: "/featured",
+  },
+  {
+    name: "Single SPA",
+    href: "/spa",
+  },
+];
 
 export default function Root(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div id="navbarNav">
           <ul className="navbar-nav">
             {links.map((link) => {
               return (

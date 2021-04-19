@@ -38,9 +38,11 @@
         "react": "https://cdn.jsdelivr.net/npm/react@17.0.1/umd/react.production.min.js",
         "react-dom": "https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js",
         "vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js",
+        "vue-router": "https://cdn.jsdelivr.net/npm/vue-router@3.1.6/dist/vue-router.min.js",
         "@test-mfa/navbar": "//localhost:1112/test-mfa-navbar.js",
         "@test-mfa/styles": "//localhost:1113/test-mfa-styles.js",
-        "@test-mfa/home": "//localhost:1111/js/app.js"
+        "@test-mfa/home": "//localhost:1111/js/app.js",
+        "@test-mfa/features": "//localhost:1114/test-mfa-features.js"
       }
     }
   </script>
@@ -80,15 +82,20 @@
   <template id="single-spa-layout">
     <single-spa-router>
       <nav>
-        <application name="@<%- orgName %>/navbar"></application>
+        <application name="@<%- orgName %>/navbar" loader="loader"></application>
       </nav>
       <main>
-        <route default>
-          <application name="@<%- orgName %>/home"></application>
-        </route>
-        <route path="about">
-          <application name="@single-spa/welcome"></application>
-        </route>
+        <div class="container">
+          <route path="/">
+            <application name="@<%- orgName %>/home" loader="loader"></application>
+          </route>
+          <route path="featured">
+            <application name="@<%- orgName %>/features" loader="loader"></application>
+          </route>
+          <route path="spa">
+            <application name="@single-spa/welcome" loader="loader"></application>
+          </route>
+        </div>
       </main>
     </single-spa-router>
   </template>

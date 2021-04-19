@@ -5,13 +5,27 @@ import {
   constructLayoutEngine,
 } from "single-spa-layout";
 
+const data = {
+  props: {},
+  loaders: {
+    loader: `<div class="row justify-content-md-center">
+    <div class="col-md-auto">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden"></span>
+        </div>
+    </div>
+</div>`,
+  },
+};
+
 const routes = constructRoutes(
-  document.querySelector("#single-spa-layout") as HTMLTemplateElement
+  document.querySelector('#single-spa-layout'),
+  data
 );
+
 const applications = constructApplications({
   routes,
   loadApp({ name }) {
-    console.log(name);
     return System.import(name);
   },
 });

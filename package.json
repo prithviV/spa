@@ -4,8 +4,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean",
-    "start": "lerna run start",
-    "nuke": "kill-port 1110 1111 1112 1113"
+    "start": "lerna run --parallel start",
+    "lint": "lerna run lint",
+    "nuke": "kill-port 1110 1111 1112 1113 1114"
   },
   "devDependencies": {
     "kill-port": "^1.6.1",
