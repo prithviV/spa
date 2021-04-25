@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import { Bridge } from "@test-mfa/communication";
+
 import { Link } from "@reach/router";
 const links = [
   {
@@ -14,8 +16,11 @@ const links = [
     href: "/spa",
   },
 ];
-
 export default function Root(props) {
+  const [message, setMessage] = useState("");
+  const sayHello = () => {
+    Bridge.send(message);
+  };
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -31,6 +36,20 @@ export default function Root(props) {
               );
             })}
           </ul>
+        </div>
+        <div className="row gx-1 float-end">
+          <div class="col-auto">
+            <input
+              type="text"
+              onChange={(event) => setMessage(event.target.value)}
+              className="form-control"
+            />
+          </div>
+          <div class="col-auto">
+            <button className="btn btn-primary" onClick={sayHello}>
+              Send message
+            </button>
+          </div>
         </div>
       </div>
     </nav>

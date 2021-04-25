@@ -1,6 +1,10 @@
 import React from "react";
+import { Bridge } from '@test-mfa/communication';
 
 export default function Root(props) {
+  const getMessage = () => {
+    alert(Bridge.getMessage());
+  }
   return <section>
     <div className="card">
       <div className="card-header">
@@ -15,7 +19,7 @@ export default function Root(props) {
                 <p className="card-text">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <a href="#" className="btn btn-primary">more...</a>
+                <a href="#" className="btn btn-primary" onClick={ getMessage }>Read message from navigation</a>
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@
     "clean": "lerna clean",
     "start": "lerna run --parallel start",
     "lint": "lerna run lint",
-    "nuke": "kill-port 1110 1111 1112 1113 1114"
+    "nuke": "kill-port 1110 1111 1112 1113 1114 1115"
   },
   "devDependencies": {
     "kill-port": "^1.6.1",
